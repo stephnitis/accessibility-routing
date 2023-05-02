@@ -11,12 +11,9 @@ export class NavigationAnnouncerDirective implements AfterViewInit {
   ) { }
 
   ngAfterViewInit() {
-    const header = document.querySelector('h2')
-    const headerText = header?.textContent;
+    const header = document.querySelector('h2')?.textContent;
     if (header) {
-      header.focus();
-      this.liveAnnouncer.announce(`Location: ${headerText}`, 'assertive', 10000);
+      this.liveAnnouncer.announce(`Location: ${header}`, 'assertive', 10000);
     }
-
   }
 }
